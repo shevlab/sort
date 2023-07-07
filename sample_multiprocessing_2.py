@@ -1,3 +1,4 @@
+# https://www.youtube.com/watch?v=LddlE3n00W8
 '''Цей код демонструє використання модуля multiprocessing для створення пула процесів та виконання функції get_value у кожному процесі з використанням методу map.
 Основні етапи коду:
 import multiprocessing: Імпортуємо модуль multiprocessing, який надає функції та класи для мультипроцесингу.
@@ -18,4 +19,5 @@ def get_value(value):
 
 if __name__ == '__main__':
     with multiprocessing.Pool(multiprocessing.cpu_count() * 3) as p:
-        p.map(get_value, [1,2,3,4,5])    
+        p.map(get_value, list(range(100))) # більш даних
+        #p.map(get_value, [1,2,3,4,5])    
